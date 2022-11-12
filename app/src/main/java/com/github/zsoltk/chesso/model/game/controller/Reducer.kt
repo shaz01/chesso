@@ -109,7 +109,6 @@ object Reducer {
 
     private fun GamePlayState.stepBy(step: Int): GamePlayState {
         val newIndex = gameState.currentIndex + step
-        if (newIndex !in 0..gameState.states.lastIndex) return this
         return goToSnapshot(newIndex)
     }
 
