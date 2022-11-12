@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -64,9 +65,9 @@ private fun ImportDialogContent(
     ) {
         var text by rememberSaveable { mutableStateOf("") }
         val isValid = remember(text) { validate(text) }
-
         TextField(
             value = text,
+            modifier = Modifier.height(128.dp),
             onValueChange = { text = it },
             isError = !isValid,
             label = @Composable {
